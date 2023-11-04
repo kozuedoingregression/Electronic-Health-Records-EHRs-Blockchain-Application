@@ -1,0 +1,207 @@
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    /* Use 'Open Sans' or any other preferred thin font */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+canvas {
+
+    position: absolute;
+    top: 0;
+    left: 450px;
+    animation: slideInRight 1s ease-in 0s 1 normal both, fadeIn 3s ease 0s 
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-700px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes slideInRight {
+    from {
+        transform: translateX(250px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes slideInTop {
+    from {
+        transform: translateY(200px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+header {
+    background-color: #1a1a1a;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav {
+display: flex;
+justify-content: center; /* Center the navigation links horizontally */
+align-items: center; /* Center the navigation vertically */
+}
+
+.head {
+    margin-top: 200px;
+    margin-left: 100px;
+    opacity: 0;
+    animation: slideInLeft 1s ease-in 0s 1 normal both, fadeIn 1s ease 0s forwards;
+
+}
+
+.head2 {
+
+    margin-left: 100px;
+    opacity: 0;
+    animation: slideInLeft 1s ease-in 1s 1 normal both, fadeIn 1s ease 1s forwards;
+
+}
+
+.head3 {
+
+    margin-left: 100px;
+    opacity: 0;
+    animation: slideInLeft 1s ease-in 1.5s 1 normal both, fadeIn 1.5s ease 1s forwards;
+
+}
+
+.head4 {
+
+    margin-left: 100px;
+    opacity: 0;
+    animation: slideInLeft 1s ease-in 2s 1 normal both, fadeIn 2s ease 1s forwards;
+
+}
+
+.q1 {
+    font-size: 4vw;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+li {
+    margin-right: 20px;
+}
+
+.navv {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    margin-left: 100px;
+}
+
+.navv:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color:blueviolet;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.navv:hover:after {
+    width: 100%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Animation Styles */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+
+}
+
+.button-container {
+    text-align: center;
+    animation: slideInTop 1s ease-in 2.2s 1 normal both, fadeIn 2.2s ease 1s
+}
+
+.button {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 15px 30px;
+    position: relative;
+    /* margin-left: 300px; */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #252525;
+    font-size: 19px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    ul {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        z-index: 1;
+        text-align: right;
+    }
+
+    li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    ul.active {
+        display: flex;
+    }
+}
+main {
+    padding: 20px;
+}

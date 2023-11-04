@@ -4,243 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="styles/login.css">
+    <script src="javascript/login.js" defer></script>
     <title>Document</title>
 </head>
-<style>
-    body {
-        background-color: #1a1a1a;
-        color: #fff;
-        font-family: 'Open Sans', sans-serif;
-        /* Use 'Open Sans' or any other preferred thin font */
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-
-    header {
-        background-color: #1a1a1a;
-        padding: 20px 0;
-    }
-
-    @keyframes slideInLeft {
-        from {
-            transform: translateX(-700px);
-        }
-
-        to {
-            transform: translateX(0);
-        }
-    }
-
-    @keyframes colorChange {
-        0% {
-            color: white;
-        }
-
-        100% {
-            color: blueviolet;
-            /* Change the color to your preferred choice */
-        }
-    }
-
-    @keyframes slideInRight {
-        from {
-            transform: translateX(250px);
-        }
-
-        to {
-            transform: translateX(0);
-        }
-    }
-
-
-    @keyframes slideInTop {
-        from {
-            transform: translateY(200px);
-        }
-
-        to {
-            transform: translateX(0);
-        }
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-    }
-
-    li {
-        margin-right: 20px;
-    }
-
-    .q1 {
-        font-size: 3vw;
-    }
-
-    .head {
-        text-align: center;
-        margin-top: 200px;
-        opacity: 0;
-        animation: fadeIn 1s ease 0s forwards;
-
-    }
-
-    .head2 {
-        text-align: center;
-        opacity: 0;
-        animation: fadeIn 1s ease 0s forwards;
-
-    }
-
-    .navv {
-        text-decoration: none;
-        color: #fff;
-        font-weight: bold;
-        position: relative;
-        margin-left: 100px;
-    }
-
-    .navv:after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 3px;
-        background-color: blueviolet;
-        bottom: -5px;
-        left: 0;
-        transition: width 0.3s ease-in-out;
-    }
-
-    .navv:hover:after {
-        width: 100%;
-    }
-
-    .logo {
-        font-size: 24px;
-        font-weight: bold;
-    }
-
-    /* Animation Styles */
-    .menu-icon {
-        display: none;
-        font-size: 24px;
-        cursor: pointer;
-
-    }
-
-    .button {
-        background-color: #1a1a1a;
-        color: #fff;
-        padding: 15px 30px;
-        position: relative;
-        /* margin-left: 300px; */
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .key-input {
-        margin: 20px;
-        width: 300px;
-        height: 25px;
-    }
-
-    .button:hover {
-        background-color: #252525;
-        font-size: 19px;
-    }
-
-    .foot {
-        text-align: center;
-
-    }
-
-    .key {
-        color: white;
-        transition: all 2s ease;
-    }
-
-    .key.blue {
-        color: blueviolet;
-    }
-</style>
 
 <body>
     <header>
-
         <nav>
-
             <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
             <ul id="menu">
                 <li><a class="navv" href="index.html">Home</a></li>
                 <li><a class="navv" href="login.html">Records</a></li>
-                <li><a class="navv" href="#features">Features</a></li>
-                <li><a class="navv" href="#contact">Contact</a></li>
+                <li><a class="navv" href="features.html">Features</a></li>
+                <li><a class="navv" href="register.html">Register</a></li>
             </ul>
         </nav>
     </header>
     <section class="head">
-        <p1 class="q1">Please enter the <span class="key">key phrase</span> provided below <br>to access a demo patient
+        
+        <p1 class="q1">Please enter the <span class="key">patient id </span>in order <br>to access the patient
             account.<br><br></p1>
     </section>
+    <!-- <section class="head2">
+        <p2 class="q2">Enter 1003 for a demo <br><br></p2>
+    </section> -->
     <section class="head2">
-        <p2 class="q2">"ocean cloud breeze ripple adventure"<br><br></p2>
-    </section>
-    <section class="head2">
-        <input id="keyvalue" class="key-input" type="text" placeholder="Enter your key phrase">
+        <input id="keyvalue" class="key-input" type="text" placeholder="Enter pid">
         <div class="button-container">
-            <a href="login.html">
-
-                <button id="loginbutton" class="button" >See Records</button>
-
-            </a>
+            <a href="login.html"><button id="loginbutton" class="button" >See Records</button></a>
         </div>
     </section>
-    <footer class="foot">
-        <p>&copy; 2023 Electronic Health Records | Developer <a href="https://twitter.com/_znecro"
-                target="_blank">Sashank Thapa</a></p>
+    <br>
+    <section class="head2">
+        <p2 id="status" class="q2">Generate your <a href="register.html">pid</a></p2>
+    </section>
+    
+    <footer class="footer">
+        <p>&copy; 2023 Electronic Health Records | Developed By 
+        <a href="https://twitter.com/_znecro" target="_blank"><img src="twitter-x.svg" alt="Bootstrap Logo"></a></p>
     </footer>
-
 </body>
 <script>
-    setTimeout(function () {
-        document.querySelector(".key").classList.add("blue");
-    }, 1000);
-
-    document.getElementById('loginbutton').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent the default behavior
-    console.log("Button clicked");
-    const key = document.getElementById('keyvalue');
-    const temp = "ocean cloud breeze ripple adventure";
-    if (key.value === temp) {
-        window.location.href = "records.html";
-        console.log("success");
-    } else {
-        console.log("error");
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        menu.classList.toggle("active");
     }
-    // Your button click logic goes here
-});
-
 </script>
-
 </html>

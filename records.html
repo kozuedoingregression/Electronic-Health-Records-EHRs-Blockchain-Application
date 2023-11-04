@@ -1,122 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="styles/records.css">
+  <script src="javascript/records.js" defer></script>
   <title>Records</title>
- <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #1a1a1a;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      height: 100vh;
-      margin: 0;
-      overflow-x: hidden;
-    }
-    .title {
-      text-align: center;
-      /* font-size: 24px; */
-      color: #f3f3f3;
-    }
-    .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-      padding: 20px;
-      width: 100%;
-    }
-    .blockchain-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      max-height: 80vh;
-      overflow-y: scroll;
-      padding: 10px;
-      background-color: #1a1a1a;
-      border: 1px solid #1a1a1a;
-      border-radius: 5px;
-    }
-
-    .description-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-height: 80vh;
-      overflow-y: scroll;
-      padding: 10px;
-    }
-    .description {
-      width: 1000px;
-      padding: 0px;
-      background-color: #1a1a1a;
-      border: 1px solid #1a1a1a;
-      border-radius: 5px;
-      color: #f3f3f3;
-    }
-    .block {
-      cursor: pointer;
-      width: 150px;
-      height: 160px;
-      background-color: #1a1a1a;
-      border: 1px solid #1a1a1a;
-      border-radius: 5px;
-      text-align: center;
-      margin: 10px 0;
-      color: #fff;
-      opacity: 0;
-      animation: slideIn 0.5s ease-out forwards, scaleUp 0.5s ease-out forwards;
-      font-size: 8rem;
-      transition: background-color 0.3s;
-      transition: all 0.5s ease;
-    }
-    .block:hover {
-        font-size: 9rem; /* Change the background color on hover */
-        height: 180px;
-    }
-    .connector {
-      width: 5px;
-      height: 100px;
-      background-color: #fff;
-      position: relative;
-      left: 70px;
-    }
-
-    @keyframes slideIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes scaleUp {
-      0% {
-        transform: scale(0);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    /* Hide the scrollbar */
-    .scrollbar-hidden {
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-
-    .scrollbar-hidden::-webkit-scrollbar {
-      display: none;
-    }
-  </style>
 </head>
+
 <body>
-  <h1 class="title">Blockchain Visualization</h1>
+  <header>
+    <nav>
+      <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+      <ul id="menu">
+        <li><a class="navv" href="index.html">Home</a></li>
+        <li><a class="navv" href="login.html">Records</a></li>
+        <li><a class="navv" href="#features">Features</a></li>
+        <li><a class="navv" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h1 id="title"></h1>
+  <section class="head2">
+    <div id="personal-information">
+    </div>
+    <table>
+      <tbody id="info"></tbody>
+    </table>
+    <br>
+    <div id="record-information"></div>
+  </section><br>
+  <div class="button-container">
+    <button id="loginbutton" onclick="chain()" class="button">Visualize Blockchain</button>
+  </div>
   <div class="container">
     <div class="blockchain-container scrollbar-hidden" id="blockchain">
       <div class="blockchain">
@@ -125,48 +44,21 @@
     </div>
     <div class="description-container">
       <div class="description">
-        <p>Select a block to view its content.</p>
+        <p id="dd"></p>
+        <table>
+          <tbody id="record"></tbody>
+    
+        </table>
       </div>
     </div>
   </div>
 
-  <script>
-    function generateLoremIpsum() {
-      return "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget turpis sed augue gravida bibendum.";
-    }
-    // Define your blockchain data
-    const blockchainData = [
-      { id: 0, info: "Genesis Block" },
-      { id: 1, info: "Block 1" },
-      { id: 2, info: generateLoremIpsum() },
-      { id: 3, info: "Block 3" },
-      { id: 4, info: "Block 4" },
-      { id: 5, info: "Block 5" },
-      { id: 6, info: "Block 6" },
-      { id: 7, info: "Block 7" },
-      { id: 8, info: "Block 8" },
-      { id: 9, info: "Block 9" },
-    ];
+  <footer class="footer">
+    <p>&copy; 2023 Electronic Health Records | Developed By
+      <a href="https://twitter.com/_znecro" target="_blank"><img src="twitter-x.svg" alt="Bootstrap Logo"></a>
+    </p>
+  </footer>
 
-    const description = document.querySelector(".description");
-
-    // Create blockchain visualization
-    const blockchain = document.querySelector(".blockchain");
-    blockchainData.forEach((blockData, i) => {
-      const block = document.createElement("div");
-      block.className = "block bi bi-filter-square";
-      block.addEventListener("click", () => {
-        description.innerHTML = `<strong>Block #${blockData.id}</strong><br>${blockData.info}`;
-      });
-      blockchain.appendChild(block);
-
-      if (i < blockchainData.length - 1) {
-        const connector = document.createElement("div");
-        connector.className = "connector";
-        blockchain.appendChild(connector);
-      }
-    });
-  </script>
-  <footer class="foot">  <p>&copy; 2023 Electronic Health Records | Developer <a href="https://twitter.com/_znecro" target="_blank">Sashank Thapa</a></p></footer>
 </body>
+
 </html>
