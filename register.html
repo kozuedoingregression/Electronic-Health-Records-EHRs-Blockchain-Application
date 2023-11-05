@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="styles/register.css">
+    <script src="javascript/register.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <ul id="menu">
+                <li><a class="navv" href="index.html">Home</a></li>
+                <li><a class="navv" href="login.html">Records</a></li>
+                <li><a class="navv" href="register.html">Register</a></li>
+                <li><a class="navv" href="features.html">Features</a></li>  
+            </ul>
+        </nav>
+    </header>
+    <section class="head">
+        
+        <p1 class="q1">Step into the future of <span class="key">EHRs</span><br>with blockchain<br><br></p1>
+    </section>
+    <section id="create-record" class="head2">
+        <p id="pid" class="dd"></p>
+        <h2>Patient Registration</h2>
+        <form>
+            <div class="form-group">
+              <label for="patient-name">Patient Name</label>
+              <input type="text" id="patient-name" name="patient-name" placeholder="Enter Patient Name" />
+            </div>
+      
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="number" id="age" name="age" placeholder="Enter Age" />
+            </div>
+      
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+      
+            <div class="form-group">
+              <label for="mobile-num">Mobile Number</label>
+              <input type="number" id="mobile-num" name="mobilenum" placeholder="Enter Mobile Number" />
+            </div>
+      
+            <div class="form-group">
+              <label for="blood-type">Blood Type</label>
+              <select id="blood-type">
+                <option value="">Select Blood Type</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+              </select>
+            </div>
+      
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input type="text" id="location" placeholder="Enter Location" />
+            </div>
+          </form>
+        <div class="button-container">
+            <button id="loginbutton" onclick="connectWallet()" class="button" >Connect Wallet</button>
+          <button id="button-register" class="button" onclick="addpatient()">Register</button>
+        </div>
+      </section>
+      <footer class="footer">
+        <p>&copy; 2023 Electronic Health Records | Developed By 
+        <a href="https://twitter.com/_znecro" target="_blank"><img src="twitter-x.svg" alt="Bootstrap Logo"></a></p>
+    </footer>
+</body>
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        menu.classList.toggle("active");
+    }
+    setTimeout(function () {
+        document.querySelector(".key").classList.add("blue");
+    }, 1000);
+</script>
+</html>

@@ -1,227 +1,238 @@
 const HealthRecordAbi = [
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "_patientName",
-        "type": "string"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_age",
-        "type": "uint256"
-      },
-      {
-        "internalType": "string",
-        "name": "_gender",
-        "type": "string"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_phNo",
-        "type": "uint256"
-      },
-      {
-        "internalType": "string",
-        "name": "_bloodType",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "_location",
-        "type": "string"
-      }
-    ],
-    "name": "insertPatient",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      },
-      {
-        "internalType": "string",
-        "name": "_hospitalName",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "_doctorName",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "_speciality",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "_referredBy",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "_complaints",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "_investigatinAdvise",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "_medicineAdvice",
-        "type": "string"
-      }
-    ],
-    "name": "insertRecord",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getpid",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "Patient",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "pid",
-        "type": "uint256"
-      },
-      {
-        "internalType": "string",
-        "name": "patientName",
-        "type": "string"
-      },
-      {
-        "internalType": "uint256",
-        "name": "age",
-        "type": "uint256"
-      },
-      {
-        "internalType": "string",
-        "name": "gender",
-        "type": "string"
-      },
-      {
-        "internalType": "uint256",
-        "name": "phNo",
-        "type": "uint256"
-      },
-      {
-        "internalType": "string",
-        "name": "bloodType",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "location",
-        "type": "string"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "pid",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "Records",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "pid",
-        "type": "uint256"
-      },
-      {
-        "internalType": "string",
-        "name": "hospitalName",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "doctorName",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "speciality",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "referredBy",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "complaints",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "investigatinAdvise",
-        "type": "string"
-      },
-      {
-        "internalType": "string",
-        "name": "medicineAdvice",
-        "type": "string"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  }
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_patientName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_age",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_gender",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_phNo",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_bloodType",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_location",
+				"type": "string"
+			}
+		],
+		"name": "insertPatient",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pid",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_hospitalName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_doctorName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_speciality",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_referredBy",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_complaints",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_investigatinAdvise",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_medicineAdvice",
+				"type": "string"
+			}
+		],
+		"name": "insertRecord",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getpid",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "Patient",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "pid",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "patientName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "age",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "gender",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "phNo",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "bloodType",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "location",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "pid",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "Records",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "pid",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "hospitalName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "doctorName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "speciality",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "referredBy",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "complaints",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "investigatinAdvise",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "medicineAdvice",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
 ];
-const HealthRecordAddress = "0x4e95488b28248870963d8f2f23033ff1406bd1a5";
+const HealthRecordAddress = "0x9b4a19facb63ba97d476aaa627d8d723da9a75ff";
 
 //get pid
 // Function to retrieve the input value from the URL
 function getParameterValue(name) {
   var urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(name);
+  if(urlParams.get(name)==1695198)
+  {
+	insertinformationtable("John Stew","1695198","24","Male","B+"," 9567645674","Uk");
+	bData.push({HospitalName: "Gentige", DoctorName: "Dr.David", speciality: "internal Meds",referredBy: "self",complaints: "fever headache",investigatinAdvise: "rest ",medicineAdvice: "pcm"});
+	bData.push({HospitalName: "Gentige", DoctorName: "Dr.Mark", speciality: "internal Meds",referredBy: "Dr.David",complaints: "fever headache",investigatinAdvise: "therapy ",medicineAdvice: "xar-500mg, pnoptli250mg"});
+	bData.push({HospitalName: "Gentige", DoctorName: "Dr.Mark", speciality: "internal Meds",referredBy: "Dr.David",complaints: "fever headache",investigatinAdvise: "therapy and rest ",medicineAdvice: "metholin600mg, atholin100mg"});
+  }
+  else
+  {
+	return urlParams.get(name);
+  }
+  
 }
 const bData = [];
 

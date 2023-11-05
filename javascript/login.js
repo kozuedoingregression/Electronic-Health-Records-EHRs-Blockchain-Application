@@ -15,3 +15,6 @@
     window.location.href = 'records.html?value=' + encodedValue;
     // Your button click logic goes here
 });
+document.getElementById('demo').addEventListener('click', () =>{
+    document.getElementById('demo').innerText=1695198;
+});

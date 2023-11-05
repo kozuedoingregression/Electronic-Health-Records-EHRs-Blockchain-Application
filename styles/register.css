@@ -4,15 +4,9 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
 }
-canvas {
 
-    position: absolute;
-    top: 0;
-    left: 450px;
-    animation: slideInRight 1s ease-in 0s 1 normal both, fadeIn 3s ease 0s
-}
 
 @keyframes slideInLeft {
     from {
@@ -21,6 +15,17 @@ canvas {
 
     to {
         transform: translateX(0);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: white;
+    }
+
+    100% {
+        color: blueviolet;
+        /* Change the color to your preferred choice */
     }
 }
 
@@ -54,11 +59,10 @@ canvas {
         opacity: 1;
     }
 }
-
-
 header {
     background-color: #1a1a1a;
     padding: 20px 0;
+    text-align: center;
 }
 
 nav {
@@ -71,35 +75,16 @@ nav {
 
 .head {
     margin-top: 200px;
-    margin-left: 100px;
-    opacity: 0;
-    animation: slideInLeft 1s ease-in 0s 1 normal both, fadeIn 1s ease 0s forwards;
+    text-align: center;
 
 }
 
 .head2 {
 
-    margin-left: 100px;
-    opacity: 0;
-    animation: slideInLeft 1s ease-in 1s 1 normal both, fadeIn 1s ease 1s forwards;
+    text-align: center;
 
 }
 
-.head3 {
-
-    margin-left: 100px;
-    opacity: 0;
-    animation: slideInLeft 1s ease-in 1.5s 1 normal both, fadeIn 1.5s ease 1s forwards;
-
-}
-
-.head4 {
-
-    margin-left: 100px;
-    opacity: 0;
-    animation: slideInLeft 1s ease-in 2s 1 normal both, fadeIn 2s ease 1s forwards;
-
-}
 
 .q1 {
     font-size: 4vw;
@@ -153,34 +138,25 @@ li {
 
 }
 
-.button-container {
-    text-align: center;
-    animation: slideInTop 1s ease-in 2.2s 1 normal both, fadeIn 2.2s ease 1s
-}
-
-.button1 {
+.button {
     background-color: #1a1a1a;
     color: #fff;
     padding: 15px 30px;
     position: relative;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.button2 {
-    background-color: #1a1a1a;
-    color: #fff;
-    padding: 15px 30px;
-    position: relative;
-    margin-left: 30px;
+    /* margin-left: 300px; */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.button1:hover,.button2:hover {
+.key-input {
+    margin: 20px;
+    width: 300px;
+    height: 25px;
+}
+
+.button:hover {
     background-color: #252525;
     font-size: 19px;
 }
@@ -198,7 +174,70 @@ li {
     /* Font size for the text */
 }
 
-/* Media query for screens with a maximum width of 768px */
+
+.footer a {
+    color: #fff;
+    /* Link color within the footer */
+    text-decoration: none;
+    /* Remove underlines from links */
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    /* Add underlines to links on hover */
+}
+
+.key {
+    color: white;
+    transition: all 2s ease;
+}
+
+.key.blue {
+    color: blueviolet;
+}
+form {
+    max-width: 350px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .form-group label {
+    flex: 1;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  .form-group input,
+  .form-group select {
+    flex: 2;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+  }
+
+  select {
+    height: 36px;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #007BFF;
+  }
+
+  .form-group input::placeholder,
+  .form-group select::placeholder {
+    color: #aaa;
+  }
+
 @media (max-width: 768px) {
     body {
         background-color: #1a1a1a;
@@ -208,12 +247,7 @@ li {
         padding: 0;
         overflow: hidden;
     }
-    canvas
-    {   text-align: center;
-        width: 200px;
-        left: 120px;
-        top:110px
-    }
+
     nav {
         flex-direction: column;
         text-align: center;
@@ -247,38 +281,33 @@ li {
     li {
         margin: 10px 0;
     }
+
     .head {
-        margin-top: 30px;
-        margin-left: 20px;
-        margin-bottom: 200px;
-        opacity: 0;
-        animation: slideInLeft 1s ease-in 0s 1 normal both, fadeIn 1s ease 0s forwards;
-    
+        margin-top: 40px;
+        /* margin-left: 20px; */
+        /* margin-bottom: 200px; */
+
     }
+
     .q1 {
         font-size: 10vw;
     }
-    
+
     .head2 {
-    
+
         margin-left: 20px;
-        opacity: 0;
-        animation: slideInLeft 1s ease-in 1s 1 normal both, fadeIn 1s ease 1s forwards;
-    
+
     }
+
     .head3 {
 
         margin-left: 20px;
-        opacity: 0;
-        animation: slideInLeft 1s ease-in 1.5s 1 normal both, fadeIn 1.5s ease 1s forwards;
-    
+
     }
-    
+
     .head4 {
-    
+
         margin-left: 20px;
-        opacity: 0;
-        animation: slideInLeft 1s ease-in 2s 1 normal both, fadeIn 2s ease 1s forwards;
-    
+
     }
 }

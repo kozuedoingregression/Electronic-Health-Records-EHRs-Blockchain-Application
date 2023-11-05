@@ -7,6 +7,7 @@
     <script src="./visual.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="styles/index.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
     <script src="javascript/visual.js" defer></script>
     <title>EHRs</title>
 </head>
@@ -19,8 +20,8 @@
             <ul id="menu">
                 <li><a class="navv" href="index.html">Home</a></li>
                 <li><a class="navv" href="login.html">Records</a></li>
-                <li><a class="navv" href="features.html">Features</a></li>
                 <li><a class="navv" href="register.html">Register</a></li>
+                <li><a class="navv" href="features.html">Features</a></li>                
             </ul>
         </nav>
     </header>
@@ -42,22 +43,27 @@
     <div class="button-container">
         <a href="login.html">
 
-            <button class="button1">See Records</button>
+            <button class="button1">Records <img src="file-earmark-text.svg"></button>
 
         </a>
-        <button id="connect" class="button2">Connect Wallet</button>
-        <br><br><br>
-        
-        <p>&copy; 2023 Electronic Health Records | Developed By
-            <a href="https://twitter.com/_znecro" target="_blank"><img src="twitter-x.svg" alt="Bootstrap Logo"></a>
-        </p>
+        <button id="connect" onclick="connectWallet()" class="button2">Connect <img src="wallet2.svg"></button>
     </div>
+    <footer class="footer">
+        <p>&copy; 2023 Electronic Health Records | Developed By 
+        <a href="https://twitter.com/_znecro" target="_blank"><img src="twitter-x.svg" alt="Bootstrap Logo"></a></p>
+    </footer>
 
     <script>
         function toggleMenu() {
             var menu = document.getElementById("menu");
             menu.classList.toggle("active");
         }
+        async function connectWallet() {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    await provider.send("eth_requestAccounts", []);
+    const signer = provider.getSigner();
+    console.log("Connected to account address:", await signer.getAddress());
+}
     </script>
 
 </body>

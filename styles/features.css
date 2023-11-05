@@ -2,29 +2,33 @@ body {
     background-color: #1a1a1a;
     color: #fff;
     font-family: 'Open Sans', sans-serif;
-    /* Use 'Open Sans' or any other preferred thin font */
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
-canvas {
-
-    position: absolute;
-    top: 0;
-    left: 450px;
-    animation: slideInRight 1s ease-in 0s 1 normal both, fadeIn 3s ease 0s 
-}
 
 @keyframes slideInLeft {
     from {
-        transform: translateX(-700px);
+        transform: translateX(-100%);
     }
 
     to {
         transform: translateX(0);
     }
 }
+
+@keyframes colorChange {
+    0% {
+        color: white;
+    }
+
+    100% {
+        color: blueviolet;
+        /* Change the color to your preferred choice */
+    }
+}
+
 @keyframes slideInRight {
     from {
         transform: translateX(250px);
@@ -55,8 +59,6 @@ canvas {
         opacity: 1;
     }
 }
-
-
 header {
     background-color: #1a1a1a;
     padding: 20px 0;
@@ -64,30 +66,42 @@ header {
 }
 
 nav {
-display: flex;
-justify-content: center; /* Center the navigation links horizontally */
-align-items: center; /* Center the navigation vertically */
+    display: flex;
+    justify-content: center;
+    /* Center the navigation links horizontally */
+    align-items: center;
+    /* Center the navigation vertically */
+}
+.hidden
+{
+    opacity: 0;
+    filter:blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.show
+{
+    filter:blur(0);
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .head {
-    margin-top: 200px;
-    margin-left: 100px;
-    opacity: 0;
-    animation: slideInLeft 1s ease-in 0s 1 normal both, fadeIn 1s ease 0s forwards;
+    margin-top: 250px;
+    text-align: center;
 
 }
 
 .head2 {
-
-    margin-left: 100px;
+    
+    margin-left: 20px;
     opacity: 0;
     animation: slideInLeft 1s ease-in 1s 1 normal both, fadeIn 1s ease 1s forwards;
 
 }
-
 .head3 {
 
-    margin-left: 100px;
+    margin-left: 20px;
     opacity: 0;
     animation: slideInLeft 1s ease-in 1.5s 1 normal both, fadeIn 1.5s ease 1s forwards;
 
@@ -95,9 +109,23 @@ align-items: center; /* Center the navigation vertically */
 
 .head4 {
 
-    margin-left: 100px;
+    margin-left: 20px;
     opacity: 0;
     animation: slideInLeft 1s ease-in 2s 1 normal both, fadeIn 2s ease 1s forwards;
+
+}
+.head5 {
+
+    margin-left: 20px;
+    opacity: 0;
+    animation: slideInLeft 1s ease-in 2.5s 1 normal both, fadeIn 2s ease 1s forwards;
+
+}
+.head6 {
+
+    margin-left: 20px;
+    opacity: 0;
+    animation: slideInLeft 1s ease-in 3s 1 normal both, fadeIn 2s ease 1s forwards;
 
 }
 
@@ -106,14 +134,14 @@ align-items: center; /* Center the navigation vertically */
 }
 
 
-ul {
+#menu {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
 }
 
-li {
+.lii {
     margin-right: 20px;
 }
 
@@ -130,7 +158,7 @@ li {
     position: absolute;
     width: 0;
     height: 3px;
-    background-color:blueviolet;
+    background-color: blueviolet;
     bottom: -5px;
     left: 0;
     transition: width 0.3s ease-in-out;
@@ -153,11 +181,6 @@ li {
 
 }
 
-.button-container {
-    text-align: center;
-    animation: slideInTop 1s ease-in 2.2s 1 normal both, fadeIn 2.2s ease 1s
-}
-
 .button {
     background-color: #1a1a1a;
     color: #fff;
@@ -170,38 +193,127 @@ li {
     transition: all 0.3s ease;
 }
 
+.key-input {
+    margin: 20px;
+    width: 300px;
+    height: 25px;
+}
+
 .button:hover {
     background-color: #252525;
     font-size: 19px;
 }
 
+.footer {
+    background-color: #1a1a1a;
+    /* Background color for the footer */
+    color: #fff;
+    /* Text color */
+    padding: 20px;
+    /* Padding around the content in the footer */
+    text-align: center;
+    /* Center-align the content */
+    font-size: 14px;
+    /* Font size for the text */
+}
 
+.footer a {
+    color: #fff;
+    /* Link color within the footer */
+    text-decoration: none;
+    /* Remove underlines from links */
+}
 
-@media screen and (max-width: 768px) {
-    .menu-icon {
-        display: block;
-    }
+.footer a:hover {
+    text-decoration: underline;
+    /* Add underlines to links on hover */
+}
 
-    ul {
-        display: none;
-        flex-direction: column;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        z-index: 1;
-        text-align: right;
-    }
+.key {
+    color: white;
+    transition: all 2s ease;
+}
 
-    li {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    ul.active {
-        display: flex;
+.key.blue {
+    color: blueviolet;
+}
+@media (prefers-reduced-motion)
+{
+    .hidden
+    {
+        transition: none;
     }
 }
-main {
-    padding: 20px;
+@media (max-width: 768px) {
+    body {
+        background-color: #1a1a1a;
+        color: #fff;
+        font-family: 'Open Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+        /* overflow: hidden; */
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navv {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .menu-icon:hover {
+        color: blueviolet;
+    }
+
+    #menu {
+        display: none;
+        width: 100%;
+    }
+
+    #menu.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .lii {
+        margin: 10px 0;
+    }
+
+    .head {
+        margin-top: 40px;
+        /* margin-left: 20px; */
+        margin-bottom: 100px;
+
+    }
+
+    .q1 {
+        font-size: 10vw;
+    }
+
+    .head2 {
+
+        margin-left: 20px;
+
+    }
+
+    .head3 {
+
+        margin-left: 20px;
+
+    }
+
+    .head4 {
+
+        margin-left: 20px;
+
+    }
 }
