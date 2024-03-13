@@ -274,7 +274,7 @@ function insertinformationtable(pname, pid, page, pgender, pblood, phno, plocati
 }
 accessrecord();
 
-// Define your blockchain data
+// Define blockchain data
 console.log(bData);
 
 const description = document.querySelector(".description");
